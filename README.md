@@ -92,9 +92,9 @@ yay find-the-command
 yay -S onlyoffice-bin
 ```
 
- - **alacritty** : Alacritty is a simple, GPU-accelerated terminal emulator. ([Repo](https://github.com/ONLYOFFICE/DesktopEditors))
+ - **kitty** : A modern, hackable, featureful, OpenGL-based terminal emulator. ([Repo](https://github.com/kovidgoyal/kitty))
  ```shell
-sudo pacman -S alacritty
+sudo pacman -S kitty
 ```
 
  - **neovim** : Better Vim ([Repo](https://github.com/neovim/neovim))
