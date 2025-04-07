@@ -1,0 +1,6 @@
+- name: Install find-the-command
+  become: false
+  community.general.pacman:
+    name: find-the-command
+    state: present
+    executable: paru

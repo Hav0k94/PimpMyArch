@@ -1,0 +1,5 @@
+- name: Install kitty
+  become: true
+  community.general.pacman:
+    name: kitty
+    state: present

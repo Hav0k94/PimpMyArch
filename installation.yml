@@ -1,0 +1,47 @@
+---
+
+- name: Mise à jour dépots + système
+  hosts: localhost
+  become: true
+  tasks:
+    - name: Updating system
+      community.general.pacman:
+        update_cache: true
+        upgrade: true
+
+- name: Installation setup Arch
+  hosts: localhost
+  # become: true
+  roles:
+    - role: bat
+      tags: bat, server, desktop
+    - role: eza
+      tags: eza, server, desktop
+    - role: fastfetch
+      tags: fastfetch, server, desktop
+    # - role: find-the-command
+    #  tags: find-the-command
+    - role: fish
+      tags: fish, server, desktop
+    - role: fzf
+      tags: fzf, server, desktop
+    - role: kitty
+      tags: kitty, desktop
+    - role: neovim
+      tags: neovim, server, desktop
+    - role: nvchad
+      tags: nvchad, server, desktop
+    # - role: onlyoffice
+    #  tags: onlyoffice
+    - role: starship
+      tags: starship, server, desktop
+
+- name: Reboot system
+  hosts: localhost
+  become: true
+  tasks:
+    - name: Reboot system
+      ansible.builtin.pause:
+        prompt: "##### Reboot system when the playbook is finished ##### \nPress Enter to continue..."
+        seconds: 30
+        echo: true

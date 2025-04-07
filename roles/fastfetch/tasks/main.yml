@@ -1,0 +1,5 @@
+- name: Install fastfetch
+  become: true
+  community.general.pacman:
+    name: fastfetch
+    state: present

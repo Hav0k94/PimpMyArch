@@ -1,0 +1,5 @@
+- name: Install Onlyoffice
+  community.general.pacman:
+    name: onlyoffice-bin
+    state: present
+    executable: yay

@@ -1,0 +1,19 @@
+- name: Install fish
+  become: true
+  community.general.pacman:
+    name: fish
+    state: present
+
+- name: Check directory config
+  ansible.builtin.file:
+    path: "{{ ansible_env.HOME }}/.config/fish"
+    state: directory
+    mode: '755'
+    owner: "{{ ansible_env.USER }}"
+    group: "{{ ansible_env.USER }}"
+
+- name: Config fish
+  ansible.builtin.copy:
+    src: files/config.fish
+    dest: "{{ ansible_env.HOME }}/.config/fish/config.fish"
+    mode: '644'

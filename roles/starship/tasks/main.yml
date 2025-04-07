@@ -1,0 +1,19 @@
+- name: Install starship
+  become: true
+  community.general.pacman:
+    name: starship
+    state: present
+
+- name: Starship fish configuration
+  ansible.builtin.lineinfile:
+    path: "{{ ansible_env.HOME }}/.config/fish/config.fish"
+    line: 'starship init fish | source'
+    create: true
+    insertafter: EOF
+    mode: '644'
+
+- name: Starship file configuration
+  ansible.builtin.copy:
+    src: files/starship.toml
+    dest: "{{ ansible_env.HOME }}/.config/starship.toml"
+    mode: '644'

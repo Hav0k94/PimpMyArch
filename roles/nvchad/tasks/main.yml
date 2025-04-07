@@ -1,0 +1,13 @@
+---
+
+- name: Install nvchad
+  ansible.builtin.git:
+    repo: "https://github.com/NvChad/starter.git"
+    dest: "{{ ansible_env.HOME }}/.config/nvim"
+    version: main
+
+- name: Follow instructions to install nvchad
+  ansible.builtin.pause:
+    prompt: "At the end, lauch nvim and follow the instructions to install nvchad. \nPress Enter to continue..."
+    seconds: 10
+    echo: true
