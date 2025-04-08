@@ -1,0 +1,17 @@
+---
+
+- name: Install basic packages
+  ansible.builtin.package:
+    name:
+      - base-devel
+      - git
+      - wget
+      - curl
+      - less
+      - net-tools
+      - man-db
+      - man-pages
+      - man-pages-fr
+      - btop
+      - python-pipx
+    state: present

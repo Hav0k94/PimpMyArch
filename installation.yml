@@ -13,6 +13,8 @@
   hosts: localhost
   # become: true
   roles:
+    - role: basic-packages
+      tags: basic-packages
     - role: bat
       tags: bat, server, desktop
     - role: eza
