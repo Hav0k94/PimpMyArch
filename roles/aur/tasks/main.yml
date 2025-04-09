@@ -1,0 +1,19 @@
+---
+
+- name: Install Paru using makepkg if it isn't installed already
+  kewlfft.aur.aur:
+    name: paru
+    use: makepkg
+    state: present
+
+- name: Install find-the-command
+  become: false
+  kewlfft.aur.aur:
+    use: paru
+    name: find-the-command
+
+- name: Install onlyoffice
+  become: false
+  kewlfft.aur.aur:
+    use: paru
+    name: onlyoffice-bin

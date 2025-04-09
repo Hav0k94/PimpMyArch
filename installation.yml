@@ -38,6 +38,13 @@
     - role: starship
       tags: starship, server, desktop
 
+- name: Install AUR packages
+  hosts: localhost
+  roles:
+    - role: aur
+      tags: aur
+
+
 - name: Reboot system
   hosts: localhost
   become: true
