@@ -14,35 +14,35 @@
   # become: true
   roles:
     - role: basic-packages
-      tags: basic-packages
+      tags: basic-packages, server, desktop, wsl
     - role: bat
-      tags: bat, server, desktop
+      tags: bat, server, desktop, wsl
     - role: eza
-      tags: eza, server, desktop
+      tags: eza, server, desktop, wsl
     - role: fastfetch
-      tags: fastfetch, server, desktop
+      tags: fastfetch, server, desktop, wsl
     # - role: find-the-command
     #  tags: find-the-command
     - role: fish
-      tags: fish, server, desktop
+      tags: fish, server, desktop, wsl
     - role: fzf
-      tags: fzf, server, desktop
-    - role: kitty
-      tags: kitty, desktop
+      tags: fzf, server, desktop, wsl
+    - role: terminal
+      tags: terminal, desktop
     - role: neovim
-      tags: neovim, server, desktop
+      tags: neovim, server, desktop, wsl
     - role: nvchad
-      tags: nvchad, server, desktop
+      tags: nvchad, server, desktop, wsl
     # - role: onlyoffice
     #  tags: onlyoffice
     - role: starship
-      tags: starship, server, desktop
+      tags: starship, server, desktop, wsl
 
 - name: Install AUR packages
   hosts: localhost
   roles:
     - role: aur
-      tags: aur
+      tags: aur, server, desktop, wsl
 
 
 - name: Reboot system
