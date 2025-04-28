@@ -1,6 +1,6 @@
 ---
 
-- name: Install Paru using makepkg if it isn't installed already
+- name: Install yay using makepkg if it isn't installed already
   kewlfft.aur.aur:
     name: yay
     use: makepkg
