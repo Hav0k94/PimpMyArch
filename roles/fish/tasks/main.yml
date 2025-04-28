@@ -19,9 +19,11 @@
     mode: '644'
 
 - name: Display instructions
-  ansible.builtin.debug:
-    msg: |
+  ansible.builtin.pause:
+    prompt: |
       ##### Fish shell installed #####
       To set fish as your default shell, run the following command:
       chsh -s /usr/bin/fish
       Then restart your terminal or log out and log back in.
+    seconds: 5
+    echo: true

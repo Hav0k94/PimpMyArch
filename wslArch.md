@@ -62,6 +62,7 @@ pipx install --include-deps ansible
 pipx install ansible-lint ansible-creator
 git clone https://github.com/Hav0k94/PimpMyArch.git
 cd PimpMyArch
+ansible-galaxy collection install -r ansible-requirements.yml
 ansible-playbook installation.yml
 ```
 
